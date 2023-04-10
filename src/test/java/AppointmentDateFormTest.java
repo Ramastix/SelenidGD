@@ -29,8 +29,6 @@ public class AppointmentDateFormTest {
         $("span[data-test-id=phone] input").setValue("+79797979797");
         $("label[data-test-id=agreement]").click();
         $x("//span[contains(text(), 'Забронировать')]").click();
-        $("div[data-test-id=notification]")
-                .shouldHave(Condition.text("Встреча успешно забронирована на " + planningDate), Duration.ofSeconds(15))
-                .shouldBe(Condition.visible);
+        $("div[data-test-id=notification]").shouldHave(Condition.text("Встреча успешно забронирована на " + planningDate), Duration.ofSeconds(15)).shouldBe(Condition.visible);
     }
 }
